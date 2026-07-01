@@ -70,13 +70,8 @@ const float = {
 export default function HeroSection() {
   return (
     <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-cover bg-center px-6 pt-24 pb-0 md:pt-32">
-        <Image
-          src={"/images/grid-bg.png"}
-          alt=""
-          className="object-cover inset-0 w-full h-full absolute"
-          width={1440}
-          height={1000}
-        />
+      <Image src={"/images/bg-light.jpg"} fill alt="" sizes="(max-width: 2000px) 100vw, 33vw" className="object-cover hidden dark:block pointer-events-none select-none" loading="lazy" />
+      <Image src={"/images/bg-dark.jpg"} fill alt="" sizes="(max-width: 2000px) 100vw, 33vw" className="object-cover dark:hidden pointer-events-none select-none" loading="lazy" />
       
       {/* ── Hello badge ── */}
       <motion.div
@@ -89,53 +84,20 @@ export default function HeroSection() {
           Hello!
         </span>
         {/* Spark lines */}
-        <motion.svg
-          className="absolute -top-2 -right-6 h-8 w-8 text-primary"
-          viewBox="0 0 32 32"
-          fill="none"
-          {...wiggle}
-        >
-          <line
-            x1="16"
-            y1="2"
-            x2="20"
-            y2="10"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-          />
-          <line
-            x1="22"
-            y1="6"
-            x2="24"
-            y2="14"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-          />
-          <line
-            x1="26"
-            y1="12"
-            x2="30"
-            y2="16"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-          />
-        </motion.svg>
+        <Image src={"/images/icon.svg"} alt="" width={30} height={30} className="object-contain absolute bottom-full left-full" />
       </motion.div>
 
       {/* ── Headline ── */}
       <div className="pointer-events-none relative z-10 text-center">
         <motion.h1
-          className="text-5xl leading-tight font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl"
+          className="text-5xl leading-tight font-semibold text-foreground sm:text-6xl md:text-7xl"
           variants={fadeUp(0.2)}
           initial="hidden"
           animate="show"
         >
           I&apos;m{" "}
           <motion.span
-            className="text-primary"
+            className="text-foreground"
             variants={fadeUp(0.3)}
             initial="hidden"
             animate="show"
@@ -145,12 +107,12 @@ export default function HeroSection() {
           ,
         </motion.h1>
         <motion.h2
-          className="-mt-2 text-5xl leading-tight font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl"
+          className="text-5xl leading-tight font-semibold sm:text-6xl md:text-7xl border border-primary px-3 bg-primary text-primary-foreground"
           variants={fadeUp(0.35)}
           initial="hidden"
           animate="show"
         >
-          Product Designer
+          Software Developer
         </motion.h2>
       </div>
 
@@ -202,7 +164,7 @@ export default function HeroSection() {
         {/* CENTER — Photo with orange semicircle backing */}
         {/* Outer div: entrance animation (scaleIn) */}
         <motion.div
-          className="relative mx-auto mt-[-100px] flex shrink-0 flex-col items-center justify-end"
+          className="relative mx-auto mt-[-60px] flex shrink-0 flex-col items-center justify-end pointer-events-none select-none"
           variants={scaleIn(0.25)}
           initial="hidden"
           animate="show"
@@ -210,12 +172,13 @@ export default function HeroSection() {
           {/* Inner div: continuous float animation, separate from entrance */}
           <motion.div className="relative flex flex-col items-center justify-end">
             {/* Photo — replace src with your actual image */}
-            <div className="relative z-10 h-[500px] w-[600px]">
+            <div className="relative z-10 h-[600px] w-[600px] pointer-events-none select-none">
               <Image
-                src="/images/hero-image.png" // ← replace with your photo path
+                src="/images/me.png" // ← replace with your photo path
                 alt="Jenny, Product Designer"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top pointer-events-none select-none"
+                sizes="(max-width: 768px) 100vw, 33vw"
                 priority
               />
             </div>
