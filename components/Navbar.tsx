@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-4 left-1/2 z-50 w-[95%] max-w-7xl -translate-x-1/2 backdrop-blur-sm",
+        "fixed top-4 left-1/2 z-50 w-[95%] max-w-7xl -translate-x-1/2 backdrop-blur-sm rounded-full",
         "transition-all duration-300 ease-in-out",
         visible ? "translate-y-0 opacity-100" : "translate-y-[-120%] opacity-0"
       )}

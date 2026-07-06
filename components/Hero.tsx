@@ -72,18 +72,19 @@ const float = {
 
 export default function HeroSection() {
   return (
-    <section className="relative flex w-full min-h-svh sm:min-h-auto flex-col items-start overflow-hidden bg-cover bg-center px-4 pt-36 pb-10 sm:items-center sm:px-6 sm:pt-36 sm:pb-0">
-      <div className="absolute bottom-20 z-50 hidden gap-2 rounded-full border border-muted/50 bg-background/60 p-2 shadow-md backdrop-blur-sm sm:flex">
+    <section className="relative flex w-full min-h-svh sm:min-h-auto flex-col items-start overflow-hidden bg-cover bg-center px-4 pt-36 pb-36 sm:items-center sm:px-6 sm:pt-36 sm:pb-10">
+      <div className="absolute bottom-40 z-50 hidden gap-2 rounded-full border border-muted/50 bg-background/60 p-2 shadow-md backdrop-blur-sm sm:flex">
         <Link href={"/resume"}>
           <Button
             variant={"ghost"}
+            size={"lg"}
             className="transition-all duration-200 ease-in-out hover:scale-105"
           >
             Resume
           </Button>
         </Link>
         <Link href={"/contact"}>
-          <Button className="group/contact cursor-pointer transition-all duration-300 ease-in-out hover:scale-105">
+          <Button size={"lg"} className="group/contact cursor-pointer transition-all duration-300 ease-in-out hover:scale-105">
             Contact Me{" "}
             <ArrowRight className="-rotate-45 transition-all duration-300 ease-in-out group-hover/contact:rotate-0" />
           </Button>
@@ -158,7 +159,7 @@ export default function HeroSection() {
       {/* ── Mobile/tablet testimonial + stats overlay — visible from base through the sm range,
            handed off to the desktop quote/stats columns exactly at md so there's no gap ── */}
       <motion.div
-        className="absolute bottom-10 left-6 z-20 mt-4 flex flex-col items-start gap-3 text-left md:hidden"
+        className="absolute bottom-20 left-6 z-20 mt-4 flex flex-col items-start gap-3 text-left md:hidden"
         variants={fadeUp(0.45)}
         initial="hidden"
         animate="show"
